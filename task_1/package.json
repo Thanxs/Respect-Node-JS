@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start:fs": "node fs.js",
-    "start:env": "cross-env EXT=[] node fs.js colors=['red','green','blue'] --deep=0",
+    "start:env": "cross-env EXT=['.js', '.mp3'] node fs.js colors=['red','green','blue'] --deep=0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
