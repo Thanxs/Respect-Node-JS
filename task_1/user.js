@@ -1,9 +1,9 @@
-const user = {
-    name: "Alex",
-    position: 'Node JS developer',
-    sayHello() {
-        console.log(`Hello, my name is ${this.name} and I'm ${this.position}`);        
-    }
-};
+const chalk = require("chalk");
 
-module.exports = user;
+exports.user = {
+  name: "Alex",
+  position: "NodeJS developer",
+  sayHello() {
+    console.log(chalk.magenta(`Hello, my name is ${this.name} and I'm ${this.position}`));
+  }
+};

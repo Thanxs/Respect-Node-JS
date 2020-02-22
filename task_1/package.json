@@ -2,10 +2,10 @@
   "name": "js",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start:fs": "node fs.js",
-    "start:env": "cross-env EXT=['.js', '.mp3'] node fs.js colors=['red','green','blue'] --deep=0",
+    "start:colorize": "cross-env node app.js",
+    "start:env": "cross-env EXT=['.js','.mp3','.acc'] node app.js colors=['red','green','blue'] --deep=0",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

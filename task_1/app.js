@@ -1,2 +1,5 @@
-require('./console.js');
-const path = require('path');
+const colorizer = require('./coloring_tools.js');
+const alex = require('./user');
+
+colorizer.makeColorfulConsole();
+alex.user.sayHello();
