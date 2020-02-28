@@ -4,8 +4,8 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start:colorize": "cross-env node app.js",
-    "start:env": "cross-env EXT=['.js','.mp3','.acc'] node app.js colors=['red','green','blue'] --deep=0",
+    "start": "cross-env EXT=\"[\"\".mp3\"\", \"\".acc\"\", \"\".json\"\"]\" node app.js --colors=\"[\"\"red\"\", \"\"green\"\", \"\"tratata\"\", \"\"blue\"\", \"\"gray\"\"]\" ",
+    "start:path": "cross-env node app.js --path=\"node_modules\\.bin\" ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
