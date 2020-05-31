@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main page</title>
+</head>
+<body>
+    <h1>Hello,
+        {% if user.email %}
+            {{ user.email }}
+        {% else %}
+            Anonym.
+        {% endif %}
+    </h1>
+
+    {% if not user.email %}
+        <a href="/login">Login Page</a>
+    {% else %}
+    {% endif %}
+</body>
+</html>
