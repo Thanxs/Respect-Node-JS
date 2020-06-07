@@ -39,10 +39,7 @@ exports.get_messages_handler = (req, res) => {
 
     if (skip > 0) {
         displayed_messages = displayed_messages.splice(parseInt(skip));
-    }
-
-    console.log(displayed_messages);
-    
+    }    
     
     res.send(displayed_messages);
 }
@@ -55,7 +52,7 @@ exports.get_message_by_id = (req, res) => {
 }
 
 exports.add_new_message = (req, res) => {
-    const { messages } = res.app.locals;
+    const { messages } = res.app.locals;  
     const { text, sender } = req.body;
     const new_massage = { text, sender, id: messages.length + 1, addedAt: new Date() };
     messages.push(new_massage);
@@ -71,7 +68,7 @@ exports.update_message = (req, res, next) => {
     if(!message) {
         return next({ code: 404, message: 'not found' });
     }
-    Object.assign(message, { text, udateAt: new Date() });
+    Object.assign(message, { text, updateAt: new Date() });
 
     res.send(message);
  }
