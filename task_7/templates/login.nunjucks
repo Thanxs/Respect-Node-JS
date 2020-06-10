@@ -1,0 +1,14 @@
+<html>
+<head>
+    <title>Login page</title>
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <form class="login-form">
+        <input class="email" type="text" placeholder="Enter your email">
+        <input class="password" type="password" placeholder="Enter your password">
+        <button class="btn" type="submit">Sign in</button>
+    </form>
+    <script src="/assets/login.js"></script>
+</body>
+</html>
