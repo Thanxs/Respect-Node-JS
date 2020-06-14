@@ -1,26 +1,18 @@
-const { Router } = require('express');
+const express = require('express');
+const router = express.Router();
+const { ensureAuthenticated } = require('../config/auth.guard');
 
-const router = Router();
 
-router.use('/auth', require('./auth/index'));
-
-router.use('/users', require('./users/index'));
-
-router.use('/messages', require('./messages/index'));
-
-router.use((err, req, res, next) => {
-  let e = { message: "" };
-  if (err.joi) {
-    e = err.joi.details;
-  } else if (err.name === "MongoError") {
-    e.message = err.errmsg;
-  } else {
-    e = err;
-  }
-  if (!Array.isArray(e)) {
-    e = [e];
-  }
-  res.status(e.status || 400).send(e);
+router.get('/logout', (req, res) => {
+    req.logout();
+    req.flash('success_msg', 'You are logged out');
+    res.redirect('/auth/login');
 });
+
+router.get('/', (req, res) => res.render('welcome'));
+
+router.get('/chat', ensureAuthenticated, (req, res) => res.render('chat', {
+    email: req.user.email
+}));
 
 module.exports = router;
