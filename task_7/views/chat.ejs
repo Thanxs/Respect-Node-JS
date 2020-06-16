@@ -1,0 +1,27 @@
+<div class="chat">
+    <h1 class='chat-title'>Alex Chat</h1>
+    <header class='chat-header'>
+        <p class="chat-welcome">Welcome, <%= email %></p>
+        <a href="/auth/login" class="btn">Logout</a>
+    </header>
+    <div class="chat-wrap">
+        <form class="chat-form">
+            <div class="input-field col s6">
+                <textarea
+                class='chat-field'
+                  type="text"
+                  id="message"
+                  name="message"
+                  class="validate"
+                  placeholder="Type your message here..."
+                  value=''
+                ></textarea>
+                <button type="submit" class="btn btn-message btn-block">Send</button>
+              </div>
+        </form>
+        <ul class="chat-messages">
+    
+        </ul>
+    </div>
+</div>
+<script src="/../assets/scripts/messages.js"></script>

@@ -1,0 +1,57 @@
+<div class="register">
+      <div class="register-wrap">
+        <h1 class="register-title">
+          <i class="fas fa-user-plus"></i> Register
+        </h1>
+        <div class="errors">        
+          <% if(typeof errors != 'undefined') { %>            
+              <% errors.forEach(function(err) { %>
+                <div>
+                  <%= err.msg %>
+                </div>
+              <% }); %>            
+            <% } %>
+        </div>
+        <div class='success'>
+          <% if(success_msg != '') { %>
+            <%= success_msg %>
+          <% } %>
+        </div>
+        <div class='warning'>
+          <% if(error_msg != '') { %>
+            <%= error_msg %>
+          <% } %>
+        </div>
+        <div class='warning'>
+          <% if(error != '') { %>
+            <%= error %>
+          <% } %>
+        </div>
+        <form action="/users/register" method="POST">
+          <div class="input-field col s6">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="validate"
+              value="<%= typeof email != 'undefined' ? email : '' %>"
+            />
+          </div>
+          <div class="input-field col s6">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              class="validate"
+              value="<%= typeof password != 'undefined' ? password : '' %>"
+            />
+          </div>
+          <button type="submit" class="btn btn-block btn-register">
+            Register
+          </button>
+        </form>
+        <p>Have An Account? <a class="register-redirect" href="/auth/login">Login</a></p>
+      </div>
+  </div>

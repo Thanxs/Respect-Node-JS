@@ -26,6 +26,7 @@ exports.get_messages_handler = (req, res) => {
         skip = 0;
     }
     
+
     if (parseInt(limit) !== 10) {
         for(let i = 0; i < limit; i++) {
             if (all_messages[i]) {
@@ -38,8 +39,8 @@ exports.get_messages_handler = (req, res) => {
 
     if (skip > 0) {
         displayed_messages = displayed_messages.splice(parseInt(skip));
-    }
-
+    }    
+    
     res.send(displayed_messages);
 }
 
@@ -51,9 +52,9 @@ exports.get_message_by_id = (req, res) => {
 }
 
 exports.add_new_message = (req, res) => {
-    const { messages } = res.app.locals;
+    const { messages } = res.app.locals;  
     const { text, sender } = req.body;
-    const new_massage = { text, sender, id: messages.length + 1, addedAt: new Date() };
+    const new_massage = { text, sender, id: messages.length + 1, addedAt: new Date().toLocaleTimeString() };
     messages.push(new_massage);
     res.send(new_massage);
 }
@@ -67,7 +68,7 @@ exports.update_message = (req, res, next) => {
     if(!message) {
         return next({ code: 404, message: 'not found' });
     }
-    Object.assign(message, { text, udateAt: new Date() });
+    Object.assign(message, { text, updateAt: new Date() });
 
     res.send(message);
  }
