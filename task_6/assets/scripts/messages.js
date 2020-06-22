@@ -30,10 +30,10 @@ chatForm.addEventListener("submit", (e) => {
 fetch(`/chat/messages`)
   .then(res => res.json())
   .then(data => {      
-    data.forEach(({ text, addedAt }) => {
+    data.forEach(({ text, createdAt }) => {
       const message = document.createElement("li");
       message.innerHTML = `<li class="message">
-      <div class="message-info"><i>${addedAt}</i> <b class="message-text">${text}</b></div>
+      <div class="message-info"><i>${createdAt}</i> <b class="message-text">${text}</b></div>
       <span class="message-remove"><i class="fas fa-trash-alt"></i></span>
       </li>`;
       messages.append(message);

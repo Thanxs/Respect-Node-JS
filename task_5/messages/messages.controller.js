@@ -5,7 +5,7 @@ exports.get_messages_handler = (req, res) => {
         return {
             id: item.id,
             text: item.text,
-            addedAt: item.addedAt,
+            createdAt: item.createdAt,
             sender: item.sender
         }
     })
@@ -54,7 +54,7 @@ exports.get_message_by_id = (req, res) => {
 exports.add_new_message = (req, res) => {
     const { messages } = res.app.locals;  
     const { text, sender } = req.body;
-    const new_massage = { text, sender, id: messages.length + 1, addedAt: new Date() };
+    const new_massage = { text, sender, id: messages.length + 1, createdAt: new Date() };
     messages.push(new_massage);
     res.send(new_massage);
 }

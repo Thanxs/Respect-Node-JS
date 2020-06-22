@@ -53,8 +53,6 @@ app.use((req, res, next) => {
 
 app.use(messages_module);
 
-app.locals.messages = [];
-
 app.use(function(err, req, res, next) {
     res.status(err.code || 400).send({ message: err.message || err });
 });
